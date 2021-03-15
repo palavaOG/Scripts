@@ -1,6 +1,6 @@
+noclip = false
 game:GetService('RunService').Stepped:connect(function()
-game.Players.LocalPlayer.Character.Head.CanCollide = false
-game.Players.LocalPlayer.Character.Torso.CanCollide = false
-game.Players.LocalPlayer.Character["Left Leg"].CanCollide = false
-game.Players.LocalPlayer.Character["Right Leg"].CanCollide = false
+if noclip then
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
 end)
