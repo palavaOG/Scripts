@@ -1,46 +1,7 @@
-Gui = Instance.new("ScreenGui", game.CoreGui)
-Button = Instance.new("TextButton", Gui)
-BackGround = Instance.new("Frame")
-Title = Instance.new("TextLabel")
   
-  
-BackGround.Name = "BackGround"
-BackGround.Parent = Gui
-BackGround.BackgroundColor3 = Color3.new(0.0588235, 0.0588235, 0.0588235)
-BackGround.BorderColor3 = Color3.new(0.0588235, 0.0588235, 0.0588235)
-BackGround.BorderSizePixel = 0
-BackGround.Position = UDim2.new(0.003, 0, 0.93, 0)
-BackGround.Size = UDim2.new(0, 0, 0, 0)
-BackGround.Active = true
-BackGround.Draggable = true
-  
-Button.Parent = BackGround
-Button.BackgroundColor3 = Color3.new(0,0,0)
-Button.BorderColor3 = Color3.new(0,0,0)
-Button.BorderSizePixel = 0
-Button.Size = UDim2.new(0, 210, 0, 33)
-Button.Position = UDim2.new(0, 650, 0, 5)
-Button.BackgroundTransparency = 1
-Button.Font = Enum.Font.Cartoon
-Button.FontSize = Enum.FontSize.Size32
-Button.Text = "Noclip ON"
-Button.TextColor3 = Color3.new(255,255,255)
-Button.TextStrokeColor3 = Color3.new(255, 0, 0)
-Button.TextStrokeTransparency = 0
-Button.Active = true
-Button.Draggable = true
-  
-noclip = false
 game:GetService('RunService').Stepped:connect(function()
-if noclip then
-game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
-end
-end)
-Button.MouseButton1Down:connect(function()
-noclip = not noclip
-if Button.Text == "Noclip ON" then
-    Button.Text = "Noclip OFF"
-else
-    Button.Text = "Noclip ON"
-end
+game.Players.LocalPlayer.Character.Head.CanCollide = true
+game.Players.LocalPlayer.Character.Torso.CanCollide = true
+game.Players.LocalPlayer.Character["Left Leg"].CanCollide = true
+game.Players.LocalPlayer.Character["Right Leg"].CanCollide = true
 end)
